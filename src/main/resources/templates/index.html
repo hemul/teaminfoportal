@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>Team Info Portal</title>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+</head>
+<script type="text/javascript">
+    fetch("/api/visits", {method: 'post'})
+        .then(response => response.json())
+        .then(visits => {
+            visits.forEach(visit => {
+                const el = document.createElement('li');
+                el.innerText = visit.description;
+                document.querySelector('#visits').append(el);
+            });
+        });
+</script>
+
+<body>
+<h1>Welcome to Spring, {{ name }}</h1>
+
+<ul id="visits">
+</ul>
+
+</body>
+
+</html>

@@ -10,9 +10,6 @@ public class TeaminfoportalApplication {
 	private static final Logger LOG = LoggerFactory.getLogger(TeaminfoportalApplication.class);
 
 	public static void main(String[] args) {
-
-		LOG.debug("APP START");
 		SpringApplication.run(TeaminfoportalApplication.class, args);
-		LOG.debug("APP SEND");
 	}
 }
